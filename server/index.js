@@ -12,8 +12,8 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:blog/blog');
 
 // App Setup (morgan and body-parser are middleware in Express)
-app.use(morgan('combined'));  // middleware for logging
-app.use(bodyParser.json({ type: '*/*' }));  // middleware for helping parse incoming HTTP requests
+app.use(morgan('combined')); // middleware for logging
+app.use(bodyParser.json({ type: '*/*' })); // middleware for helping parse incoming HTTP requests
 // app.use(cors());  // middleware for circumventing (规避) cors error
 
 // Router Setup

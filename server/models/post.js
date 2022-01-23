@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 // Define our model
 const postSchema = new Schema({
-  title: String,
-  categories: [String],
-  content: String,  // html
-  authorId: String,
-  authorName: String,
-  time: Date,
+    title: String,
+    categories: [String],
+    content: String, // html
+    authorId: String,
+    authorName: String,
+    time: Date,
 });
 
 // Create the model class

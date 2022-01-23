@@ -28,32 +28,32 @@ const store = createStoreWithMiddleware(reducers);
 const token = localStorage.getItem('token');
 // If we have a token, consider the user to be signed in
 if (token) {
-  // We need to update application state
-  store.dispatch({ type: AUTH_USER });
+    // We need to update application state
+    store.dispatch({ type: AUTH_USER });
 }
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <div>
-        <Header />
-        <div className="container" id="content">
-          <Switch>
-            <Route exact path='/' component={Welcome} />
-            <Route path='/signin' component={Signin} />
-            <Route path='/signup' component={Signup} />
-            <Route path="/profile" component={RequireAuth(Profile)} />
-            <Route path="/settings" component={RequireAuth(Settings)} />
-            <Route exact path='/posts' component={PostList} />
-            <Route path='/posts/new' component={RequireAuth(PostNew)} />
-            <Route path='/posts/:id' component={PostDetail} />
-            <Route path='/my_posts' component={RequireAuth(PostMine)} />
-            <Route component={NoMatch} />
-          </Switch>
-        </div>
-        <Footer />
-      </div>
-    </Router>
-  </Provider>
-  , document.getElementById('root')
+    <Provider store={store}>
+        <Router>
+            <div>
+                <Header />
+                <div className="container" id="content">
+                    <Switch>
+                        <Route exact path="/" component={Welcome} />
+                        <Route path="/signin" component={Signin} />
+                        <Route path="/signup" component={Signup} />
+                        <Route path="/profile" component={RequireAuth(Profile)} />
+                        <Route path="/settings" component={RequireAuth(Settings)} />
+                        <Route exact path="/posts" component={PostList} />
+                        <Route path="/posts/new" component={RequireAuth(PostNew)} />
+                        <Route path="/posts/:id" component={PostDetail} />
+                        <Route path="/my_posts" component={RequireAuth(PostMine)} />
+                        <Route component={NoMatch} />
+                    </Switch>
+                </div>
+                <Footer />
+            </div>
+        </Router>
+    </Provider>,
+    document.getElementById('root')
 );
